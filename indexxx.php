@@ -35,6 +35,25 @@
                      <input type="text" name="nickname" placeholder="Nickname">
                      <input type="password" name="password" placeholder="Введите пароль">
                      <input type="password" name="password2" placeholder="Подтвердить пароль">
+                     <?php
+                     if(isset($_GET['error']) && $_GET['error'] == 1){
+                        ?>
+                        <h3 class="text-danger">Пароль қате!</h3>
+                        <?php
+                     }else if (isset($_GET['error']) && $_GET['error'] == 4){
+                        ?>
+                        <h3 class="text-danger">Толық енгіз!</h3>
+                        <?php
+                     }else if (isset($_GET['error']) && $_GET['error'] == 3){
+                        ?>
+                        <h3 class="text-danger">Аккаунт тіркелген!</h3>
+                        <?php
+                     } else {
+                     ?>
+                        <h3 class="text-danger">Белгісіз қате!</h3>
+                        <?php
+                    }
+                    ?>
                      <button type="submit">Sign In</button>
                      <p>Dont have an account?</p>
                      <a href="file:///C:/Users/209/Desktop/1221/indexxx.html">Sign Up</a>
